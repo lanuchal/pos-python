@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from menu import  create_menu
+from stock import  create_stock
 
 def reload_page(page_name):
     if page_name in pages:
@@ -26,6 +27,7 @@ root.grid_columnconfigure(0, weight=1)
 
 pages = {
     "menu": create_menu(root, switch_to_page),
+    "stock": create_stock(root, switch_to_page),
 }
 
 current_page = None
