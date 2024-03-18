@@ -7,16 +7,11 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, StringVar, ttk,Toplevel,Label
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
-
-
-def button_callback():
-    print("button pressed")
 
 OUTPUT_PATH = Path(__file__).parent
-# ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\anucha\Desktop\MA\pos-mini\python_design\pos-python\build\assets\frame1")
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\anucha\Desktop\produtions\pos-mini\pos-python\python_design\pos-python\build\assets\frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\anucha\Desktop\produtions\pos-mini\pos-python\python_design\pos-python\demo\build\assets\frame1")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -75,9 +70,9 @@ button_2 = Button(
 )
 button_2.place(
     x=667.0,
-    y=479.3333740234375,
-    width=168.0,
-    height=112.0
+    y=533.0,
+    width=110.0,
+    height=58.3333740234375
 )
 
 button_image_3 = PhotoImage(
@@ -90,10 +85,10 @@ button_3 = Button(
     relief="flat"
 )
 button_3.place(
-    x=844.0,
-    y=479.3333740234375,
-    width=167.0,
-    height=111.33332824707031
+    x=787.0,
+    y=533.0,
+    width=105.0,
+    height=57.66670227050781
 )
 
 button_image_4 = PhotoImage(
@@ -106,10 +101,10 @@ button_4 = Button(
     relief="flat"
 )
 button_4.place(
-    x=664.0,
-    y=417.0,
-    width=113.0,
-    height=45.0
+    x=903.0,
+    y=533.0,
+    width=110.0,
+    height=57.66670227050781
 )
 
 button_image_5 = PhotoImage(
@@ -122,9 +117,9 @@ button_5 = Button(
     relief="flat"
 )
 button_5.place(
-    x=782.0,
-    y=417.0,
-    width=114.0,
+    x=664.0,
+    y=467.0,
+    width=113.0,
     height=45.0
 )
 
@@ -138,8 +133,8 @@ button_6 = Button(
     relief="flat"
 )
 button_6.place(
-    x=901.0,
-    y=417.0,
+    x=782.0,
+    y=466.0,
     width=114.0,
     height=45.0
 )
@@ -154,9 +149,9 @@ button_7 = Button(
     relief="flat"
 )
 button_7.place(
-    x=664.0,
-    y=368.0,
-    width=173.0,
+    x=901.0,
+    y=466.0,
+    width=114.0,
     height=45.0
 )
 
@@ -166,13 +161,28 @@ button_8 = Button(
     image=button_image_8,
     borderwidth=0,
     highlightthickness=0,
-    # command=lambda: print("button_8 clicked"),
-    command=lambda:open_modal_window(),
+    command=lambda: print("button_8 clicked"),
     relief="flat"
 )
 button_8.place(
+    x=664.0,
+    y=417.0,
+    width=173.0,
+    height=45.0
+)
+
+button_image_9 = PhotoImage(
+    file=relative_to_assets("button_9.png"))
+button_9 = Button(
+    image=button_image_9,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_9 clicked"),
+    relief="flat"
+)
+button_9.place(
     x=842.0,
-    y=368.0,
+    y=417.0,
     width=173.0,
     height=45.0
 )
@@ -181,7 +191,7 @@ image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
     839.0,
-    188.0,
+    236.0,
     image=image_image_2
 )
 
@@ -189,19 +199,18 @@ entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
     873.5,
-    96.0,
+    94.0,
     image=entry_image_1
 )
 entry_1 = Entry(
     bd=0,
     bg="#EBEBEB",
     fg="#000716",
-    highlightthickness=0,
-    font=('Arial', 18)
+    highlightthickness=0
 )
 entry_1.place(
     x=736.0,
-    y=75.0,
+    y=73.0,
     width=275.0,
     height=40.0
 )
@@ -217,8 +226,7 @@ entry_2 = Entry(
     bd=0,
     bg="#EBEBEB",
     fg="#000716",
-    highlightthickness=0,
-    font=('Arial', 18)
+    highlightthickness=0
 )
 entry_2.place(
     x=669.0,
@@ -231,46 +239,38 @@ entry_image_3 = PhotoImage(
     file=relative_to_assets("entry_3.png"))
 entry_bg_3 = canvas.create_image(
     840.0,
-    254.0,
+    252.0,
     image=entry_image_3
 )
-# เพิ่ม OptionMenu และ StringVar
-selected_option = StringVar(window)
-
-style = ttk.Style()
-
-# กำหนดสไตล์ให้ Combobox
-style.theme_create('combostyle', parent='clam', 
-                   settings={'TCombobox': {'configure': {'background': '#ECECEC','fieldbackground': '#ECECEC','foreground': '#000'}}})
-style.theme_use('combostyle')
-
-selected_option = StringVar(window)
-monthchoosen = ttk.Combobox(window, width=27, textvariable=selected_option)
-monthchoosen['values'] = ('January', 'February', 'March', 'April', 'May', 'June',
-                          'July', 'August', 'September', 'October', 'November', 'December')
-monthchoosen.place(x=669.0, y=237.0, width=342.0, height=32.0)
-monthchoosen.configure(font=('Arial', 18))
-monthchoosen.current(2)
-
+entry_3 = Entry(
+    bd=0,
+    bg="#EBEBEB",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_3.place(
+    x=669.0,
+    y=235.0,
+    width=342.0,
+    height=32.0
+)
 
 entry_image_4 = PhotoImage(
     file=relative_to_assets("entry_4.png"))
 entry_bg_4 = canvas.create_image(
     723.0,
-    337.0,
+    332.0,
     image=entry_image_4
 )
-
 entry_4 = Entry(
     bd=0,
     bg="#EBEBEB",
     fg="#000716",
-    highlightthickness=0,
-    font=('Arial', 18)
+    highlightthickness=0
 )
 entry_4.place(
     x=669.0,
-    y=317.0,
+    y=312.0,
     width=108.0,
     height=38.0
 )
@@ -279,19 +279,18 @@ entry_image_5 = PhotoImage(
     file=relative_to_assets("entry_5.png"))
 entry_bg_5 = canvas.create_image(
     852.0,
-    337.0,
+    332.0,
     image=entry_image_5
 )
 entry_5 = Entry(
     bd=0,
     bg="#EBEBEB",
     fg="#000716",
-    highlightthickness=0,
-    font=('Arial', 18)
+    highlightthickness=0
 )
 entry_5.place(
     x=798.0,
-    y=317.0,
+    y=312.0,
     width=108.0,
     height=38.0
 )
@@ -300,54 +299,20 @@ entry_image_6 = PhotoImage(
     file=relative_to_assets("entry_6.png"))
 entry_bg_6 = canvas.create_image(
     969.0,
-    337.0,
+    332.0,
     image=entry_image_6
 )
 entry_6 = Entry(
     bd=0,
     bg="#EBEBEB",
     fg="#000716",
-    highlightthickness=0,
-    font=('Arial', 18)
+    highlightthickness=0
 )
 entry_6.place(
     x=928.0,
-    y=317.0,
+    y=312.0,
     width=82.0,
     height=38.0
 )
-
-def open_modal_window():
-    # สร้างหน้าต่างโมดัล
-    modal_window = Toplevel(window)
-    modal_window.title("Modal Window")
-
-    # กำหนดขนาดของหน้าต่างโมดัล
-    modal_window.geometry("300x200")
-
-    # คำนวณตำแหน่งที่จะแสดงหน้าต่างโมดัลให้อยู่ตรงกลางของหน้าจอ
-    window_width = window.winfo_width()
-    window_height = window.winfo_height()
-    modal_width = 300
-    modal_height = 200
-    x = (window_width - modal_width) // 2
-    y = (window_height - modal_height) // 2
-
-    # กำหนดตำแหน่งที่จะแสดงหน้าต่างโมดัล
-    modal_window.geometry(f"+{x}+{y}")
-    # print(f"+{window_width}+{window_height}")
-
-    # สร้าง Label ในหน้าต่างโมดัล
-    label = Label(modal_window, text="This is a modal window")
-    label.pack()
-
-    # ปุ่มปิดหน้าต่างโมดัล
-    close_button = Button(
-        modal_window, text="Close", command=modal_window.destroy)
-    close_button.pack()
-
-
-
 window.resizable(False, False)
 window.mainloop()
-
