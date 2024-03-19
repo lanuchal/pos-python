@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
-from menu import  create_menu
+from pages.menu import  create_menu
 from stock import  create_stock
+from pages.setting import  create_setting
+from pages.report import  create_report
 
 def reload_page(page_name):
     if page_name in pages:
@@ -17,10 +19,15 @@ def switch_to_page(page_name):
 
 
 root = tk.Tk()
-root.title("face scan")
+root.title("pos-mini")
+root.configure(bg = "#252525")
+###################################
+# comment for rasberry pi
 root.geometry("1024x600")
-#for rasberry pi
+
+#use for rasberry pi
 # root.attributes('-fullscreen', True) 
+##############################
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
@@ -28,10 +35,13 @@ root.grid_columnconfigure(0, weight=1)
 pages = {
     "menu": create_menu(root, switch_to_page),
     "stock": create_stock(root, switch_to_page),
+    "setting": create_setting(root, switch_to_page),
+    "report": create_report(root, switch_to_page),
 }
 
 current_page = None
 current_page = pages["menu"]
 current_page.grid(column=0, row=0, padx=0, pady=0, sticky="nsew")
 
+root.resizable(False, False)
 root.mainloop()
