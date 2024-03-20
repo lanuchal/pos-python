@@ -50,20 +50,16 @@ def create_report(root, switch_to_page):
     canvas.image_2 = image_image_2
 
     entry_options = {
-        # "borderwidth": "1",
-        "font": ("Times", 24),
-        "bd": "0",
-        "fg": "#000716",
-        "bg": "#D9D9D9",
-        "highlightthickness": "0"
+        "font": ("Times", 20),
+        "borderwidth ":"0"
     }
-
-
-    entry_day_start_image = PhotoImage(file=relative_to_assets("entry_1.png"))
-    entry_day_start_bg = canvas.create_image(341.5,182.5,image=entry_day_start_image)
-    canvas.entry_day_start_bg = entry_day_start_bg
-    entry_day_start = DateEntry(report_page,**entry_options)
+    
+    entry_day_start = DateEntry(report_page,**entry_options,showweeknumbers=False,date_pattern="dd/mm/y",locale="th_TH")
     entry_day_start.place(x=28.0,y=127.0,width=187.0,height=28.0)
+
+    
+    entry_day_end = DateEntry(report_page,**entry_options,showweeknumbers=False,date_pattern="dd/mm/y",locale="th_TH")
+    entry_day_end.place(x=284.0,y=127.0,width=187.0,height=28.0)
 
 
     btn_top_image = PhotoImage(file=relative_to_assets("button_7.png"))

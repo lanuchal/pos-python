@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\anucha\Desktop\MA\pos-mini\pos-python\python_design\pos-python\demo\build\assets\frame4")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\anucha\Desktop\MA\pos-mini\pos-python\python_design\pos-python\demo\build\assets\frame6")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -39,7 +39,7 @@ image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
     512.0,
-    297.0,
+    30.0,
     image=image_image_1
 )
 
@@ -59,6 +59,114 @@ button_1.place(
     height=40.0
 )
 
+image_image_2 = PhotoImage(
+    file=relative_to_assets("image_2.png"))
+image_2 = canvas.create_image(
+    511.0,
+    267.0,
+    image=image_image_2
+)
+
+entry_image_1 = PhotoImage(
+    file=relative_to_assets("entry_1.png"))
+entry_bg_1 = canvas.create_image(
+    341.5,
+    182.5,
+    image=entry_image_1
+)
+entry_1 = Entry(
+    bd=0,
+    bg="#D9D9D9",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_1.place(
+    x=188.0,
+    y=162.0,
+    width=307.0,
+    height=39.0
+)
+
+entry_image_2 = PhotoImage(
+    file=relative_to_assets("entry_2.png"))
+entry_bg_2 = canvas.create_image(
+    684.5,
+    184.5,
+    image=entry_image_2
+)
+entry_2 = Entry(
+    bd=0,
+    bg="#D9D9D9",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_2.place(
+    x=531.0,
+    y=164.0,
+    width=307.0,
+    height=39.0
+)
+
+entry_image_3 = PhotoImage(
+    file=relative_to_assets("entry_3.png"))
+entry_bg_3 = canvas.create_image(
+    340.5,
+    282.5,
+    image=entry_image_3
+)
+entry_3 = Entry(
+    bd=0,
+    bg="#D9D9D9",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_3.place(
+    x=187.0,
+    y=262.0,
+    width=307.0,
+    height=39.0
+)
+
+entry_image_4 = PhotoImage(
+    file=relative_to_assets("entry_4.png"))
+entry_bg_4 = canvas.create_image(
+    512.0,
+    384.5,
+    image=entry_image_4
+)
+entry_4 = Entry(
+    bd=0,
+    bg="#D9D9D9",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_4.place(
+    x=186.0,
+    y=364.0,
+    width=652.0,
+    height=39.0
+)
+
+entry_image_5 = PhotoImage(
+    file=relative_to_assets("entry_5.png"))
+entry_bg_5 = canvas.create_image(
+    684.5,
+    282.5,
+    image=entry_image_5
+)
+entry_5 = Entry(
+    bd=0,
+    bg="#D9D9D9",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_5.place(
+    x=531.0,
+    y=262.0,
+    width=307.0,
+    height=39.0
+)
+
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_2.png"))
 button_2 = Button(
@@ -69,126 +177,10 @@ button_2 = Button(
     relief="flat"
 )
 button_2.place(
-    x=670.0,
-    y=433.0,
-    width=338.0,
-    height=45.0
-)
-
-button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
-button_3 = Button(
-    image=button_image_3,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
-    relief="flat"
-)
-button_3.place(
-    x=670.0,
-    y=489.0,
-    width=338.0,
-    height=45.0
-)
-
-button_image_4 = PhotoImage(
-    file=relative_to_assets("button_4.png"))
-button_4 = Button(
-    image=button_image_4,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
-    relief="flat"
-)
-button_4.place(
-    x=670.0,
-    y=541.0,
-    width=338.0,
-    height=45.0
-)
-
-button_image_5 = PhotoImage(
-    file=relative_to_assets("button_5.png"))
-button_5 = Button(
-    image=button_image_5,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
-    relief="flat"
-)
-button_5.place(
-    x=670.0,
-    y=377.0,
-    width=338.0,
-    height=45.0
-)
-
-image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
-image_2 = canvas.create_image(
-    835.0,
-    188.0,
-    image=image_image_2
-)
-
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("entry_1.png"))
-entry_bg_1 = canvas.create_image(
-    868.5,
-    105.5,
-    image=entry_image_1
-)
-entry_1 = Entry(
-    bd=0,
-    bg="#EBEBEB",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_1.place(
-    x=734.0,
-    y=86.0,
-    width=269.0,
-    height=37.0
-)
-
-entry_image_2 = PhotoImage(
-    file=relative_to_assets("entry_2.png"))
-entry_bg_2 = canvas.create_image(
-    838.5,
-    197.0,
-    image=entry_image_2
-)
-entry_2 = Entry(
-    bd=0,
-    bg="#EBEBEB",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_2.place(
-    x=674.0,
-    y=181.0,
-    width=329.0,
-    height=30.0
-)
-
-entry_image_3 = PhotoImage(
-    file=relative_to_assets("entry_3.png"))
-entry_bg_3 = canvas.create_image(
-    838.5,
-    281.0,
-    image=entry_image_3
-)
-entry_3 = Entry(
-    bd=0,
-    bg="#EBEBEB",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_3.place(
-    x=674.0,
-    y=265.0,
-    width=329.0,
-    height=30.0
+    x=176.0,
+    y=439.0,
+    width=670.0,
+    height=87.0
 )
 window.resizable(False, False)
 window.mainloop()

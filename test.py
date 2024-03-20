@@ -1,11 +1,13 @@
-from tkinter import Tk,Button
-from tkcalendar import DateEntry
-def get_date():
-    selected_date = cal.get()
-    print(f"Selected date: {selected_date}")
-root = Tk()
-cal = DateEntry(root, date_pattern="yyyy-mm-dd")
-cal.pack()
-btn = Button(root, text="Click Here To Return a Date ", command=get_date)
-btn.pack()
+import tkinter as tk
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
+
+root = tk.Tk()
+
+b1 = ttk.Button(root, text="Button 1", bootstyle=SUCCESS)
+b1.pack(side=LEFT, padx=5, pady=10)
+
+b2 = ttk.Button(root, text="Button 2", bootstyle=(INFO, OUTLINE))
+b2.pack(side=LEFT, padx=5, pady=10)
+
 root.mainloop()
